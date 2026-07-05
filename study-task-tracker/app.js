@@ -29,7 +29,8 @@ console.log("Saved tasks");
 fileStorage.saveTasks(taskService.getTasks());
 
 console.log("Read tasks");
-const tasksFromFile = fileStorage.readTasks();
-tasksFromFile.forEach(task => {
-    console.log(taskFormatter.formatTask(task));
-})
+fileStorage.readTasks((tasksFromFile) => {
+    tasksFromFile.forEach(task => {
+        console.log(taskFormatter.formatTask(task));
+    });
+});

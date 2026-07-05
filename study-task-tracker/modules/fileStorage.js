@@ -27,15 +27,15 @@ const initStorage = () => {
     }
 }
 
-const readTasks = () => {
-    const file = fs.readFile(tasksFilePath, 'utf8', (err, data) => {
+const readTasks = (callback) => {
+    fs.readFile(tasksFilePath, 'utf8', (err, data) => {
         if(err){
             console.error("Error reading file");
             return;
         }
-        console.log("File contents:", data);
+        const parsedTasks = JSON.parse(data);
+        callback(parsedTasks);
     });
-    return JSON.parse(file);
 }
 
 const saveTasks = (tasks) => {
