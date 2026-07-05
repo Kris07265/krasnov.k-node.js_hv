@@ -4,6 +4,7 @@ const path = require('path');
 const dataDirPath = path.join(__dirname, '..', 'data');
 const tasksFilePath = path.join(dataDirPath, 'tasks.json');
 
+
 const initStorage = () => {
     if(!fs.existsSync(dataDirPath)){
         fs.mkdir(dataDirPath, (err) => {
