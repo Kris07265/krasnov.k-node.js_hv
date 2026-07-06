@@ -48,9 +48,14 @@ const deleteTask = (id) => {
     return null;
 }
 
+const setTasks = (newTasks) => {
+    tasks.push(...newTasks);
+};
+
 module.exports = {
     addTask,
     getTasks,
     completeTask,
     deleteTask,
+    setTasks,
 }
