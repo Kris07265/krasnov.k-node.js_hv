@@ -1,8 +1,5 @@
 const taskService = require('./modules/taskService');
 const taskFormatter = require('./modules/taskFormatter');
-const fileStorage = require('./modules/fileStorage');
-
-fileStorage.initStorage();
 
 const taskList = () => {
     const tasks = taskService.getTasks();
@@ -24,13 +21,3 @@ taskList();
 console.log("Deleted task");
 taskService.deleteTask(1);
 taskList();
-
-console.log("Saved tasks");
-fileStorage.saveTasks(taskService.getTasks());
-
-console.log("Read tasks");
-fileStorage.readTasks((tasksFromFile) => {
-    tasksFromFile.forEach(task => {
-        console.log(taskFormatter.formatTask(task));
-    });
-});
