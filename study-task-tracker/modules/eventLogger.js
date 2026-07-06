@@ -23,7 +23,7 @@ myEmitter.on('taskCreated', (taskTitle) => {
 });
 
 myEmitter.on('taskCompleted', (taskId) => {
-    logToFile('taskCompleted', `Task with ID ${taskId} was marked as completed.`);
+    logToFile('taskCompleted', `Task with ID ${taskId} was completed.`);
 });
 
 myEmitter.on('taskDeleted', (taskId) => {
