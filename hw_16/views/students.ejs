@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Список студентів</title>
+</head>
+<body>
+<h1>Список студентів</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Ім'я</th>
+        <th>Рівень</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% studentsList.forEach(function(student) { %>
+        <tr>
+            <td><%= student.name %></td>
+            <td><%= student.level %></td>
+        </tr>
+    <% }) %>
+    </tbody>
+</table>
+</body>
+</html>
